@@ -20,7 +20,8 @@ public class HighLow {
                 System.out.println("HIGHER");
             }
             counter++;
+
             System.out.printf("You have guessed %d times!\n", counter);
-        } while(!guess);
+        } while(!guess && counter<10);
     }
 }
