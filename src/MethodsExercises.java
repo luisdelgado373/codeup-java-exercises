@@ -8,7 +8,7 @@ public class MethodsExercises {
 //        int modulused = modulus(10, 7);
 //        int userInput = getInteger(1, 10);
 //        int factorialed = factorial(1, 10);
-//        diceRoll();
+        diceRoll();
 
 //        1.==================
 //        System.out.printf("Here are your numbers added: %d\n", added);
@@ -79,21 +79,21 @@ public class MethodsExercises {
 //        =====================
 
 //        4.===================
-//    public static void diceRoll() {
-//        System.out.print("How many sides should each dice have? ");
-//        Scanner userReply = new Scanner(System.in);
-//        int diceSides = Integer.parseInt(userReply.nextLine());
-//        double randomGen = (Math.random()*(diceSides-1)) + 1;
-//        int random = (int) randomGen;
-//        double randomGen2 = (Math.random()*(diceSides-1)) + 1;
-//        int random2 = (int) randomGen2;
-//        int dice1 = random;
-//        int dice2 = random2;
-//        System.out.printf("Your rolled a %d on one dice, and a %d on the other.\n", dice1, dice2);
-//        System.out.print("Would you like to roll again? Y/N");
-//        String answer = userReply.nextLine();
-//        if(answer.equals("y")) {
-//            diceRoll();
-//        }
-//    }
+    public static void diceRoll() {
+        System.out.print("How many sides should each dice have? ");
+        Scanner userReply = new Scanner(System.in);
+        int diceSides = Integer.parseInt(userReply.nextLine());
+        double randomGen = (Math.random()*(diceSides-1)) + 1;
+        int random = (int) randomGen;
+        double randomGen2 = (Math.random()*(diceSides-1)) + 1;
+        int random2 = (int) randomGen2;
+        int dice1 = random;
+        int dice2 = random2;
+        System.out.printf("Your rolled a %d on one dice, and a %d on the other.\n", dice1, dice2);
+        System.out.print("Would you like to roll again? Y/N");
+        String answer = userReply.nextLine();
+        if(answer.equals("y")) {
+            diceRoll();
+        }
+    }
 }
