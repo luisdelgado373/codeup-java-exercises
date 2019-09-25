@@ -19,7 +19,7 @@ public class InputTest {
         double doub = input.getDouble(1, 10);
         System.out.println("Entered double is: " + doub);
 
-        double doub1 = input.getDouble();
+        double doub1 = input.getDouble("Enter a double");
         System.out.println("Entered double is: " + doub1);
     }
 }

@@ -54,8 +54,8 @@ public class Input {
             }
     }
 
-    public double getDouble() {
-        System.out.println("Enter a double");
+    public double getDouble(String prompt) {
+        System.out.println(prompt);
         return Double.parseDouble(scanner.nextLine());
     }
 }
