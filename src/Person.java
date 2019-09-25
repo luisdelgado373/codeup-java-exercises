@@ -2,7 +2,8 @@ public class Person {
     private String name;
 
     public Person(String name) {
-        this.name = name;
+        setName(name);
+//        this.name = name;
     }
 
     public String getName() {
@@ -14,14 +15,14 @@ public class Person {
     }
 
     public void sayHello() {
-        System.out.println("Hello " + this.name);
+        System.out.println("Hello " + this.getName());
     }
 
     public static void main(String[] args) {
-        Person person = new Person("Louis");
+        Person person = new Person("Luis");
         System.out.println("Name: " + person.getName());
         System.out.println("Changing Name");
-        person.setName("Luis");
+        person.setName("Louis");
         person.sayHello();
 
 // ================TESTS================

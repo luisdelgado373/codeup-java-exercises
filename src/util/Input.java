@@ -4,17 +4,18 @@ import java.util.Scanner;
 
 public class Input {
     private Scanner scanner;
+
     public Input() {
         this.scanner = new Scanner(System.in);
     }
 
     public String getString() {
-        System.out.println("Enter string");
-        return scanner.nextLine();
+        System.out.println("Type something");
+        return this.scanner.nextLine();
     }
 
     public boolean yesNo() {
-        System.out.println("Enter a yes or no");
+        System.out.println("Enter Y/N or yes/no");
         String input = scanner.nextLine();
         return input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("y");
     }
@@ -24,15 +25,13 @@ public class Input {
         boolean isTrue = false;
 
         System.out.printf("give an integer between %d & %d", min, max);
-        do {
-            input = Integer.parseInt(scanner.nextLine());
-            if (input > min && input < max) {
-                isTrue = true;
-            } else {
-                System.out.println("Invalid input");
-            }
-        } while (!isTrue);
-        return input;
+        input = Integer.parseInt(scanner.nextLine());
+        if (input > min && input < max) {
+            return input;
+        } else {
+            System.out.println("Out of range");
+            return getInt(min, max);
+        }
     }
 
     public int getInt() {
@@ -44,24 +43,19 @@ public class Input {
 
     public double getDouble(double min, double max) {
         double input;
-        boolean isTrue = false;
 
         System.out.printf("give a double between %f & %f", min, max);
-        do {
             input = Double.parseDouble(scanner.nextLine());
             if (input > min && input < max) {
-                isTrue = true;
+                return input;
             } else {
-                System.out.println("Invalid input");
+                System.out.println("Out of range");
+                return getDouble(min, max);
             }
-        } while (!isTrue);
-        return input;
     }
 
     public double getDouble() {
-        double input;
         System.out.println("Enter a double");
-        input = Double.parseDouble(scanner.nextLine());
-        return input;
+        return Double.parseDouble(scanner.nextLine());
     }
 }

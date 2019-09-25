@@ -5,21 +5,21 @@ public class InputTest {
         Input input = new Input();
 
         String string = input.getString();
-        System.out.println("String: " + string);
+        System.out.println("Entered string is: " + string);
 
         boolean tOrF = input.yesNo();
-        System.out.println("True or False: " + tOrF);
+        System.out.println(tOrF);
 
-        int number1 = input.getInt(1, 50);
-        System.out.println("number1: " + number1);
+        int number = input.getInt(1, 50);
+        System.out.println("Entered integer is: " + number);
 
-        int number = input.getInt();
-        System.out.println("number: " + number);
+        int number1 = input.getInt();
+        System.out.println("Entered integer is: " + number1);
 
-        double doub1 = input.getDouble(1, 10);
-        System.out.println("double1: " + doub1);
+        double doub = input.getDouble(1, 10);
+        System.out.println("Entered double is: " + doub);
 
-        double doub = input.getDouble();
-        System.out.println("double: " + doub);
+        double doub1 = input.getDouble();
+        System.out.println("Entered double is: " + doub1);
     }
 }
