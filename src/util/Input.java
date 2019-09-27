@@ -24,9 +24,8 @@ public class Input {
         int input;
         boolean isTrue = false;
 
-        System.out.printf("give an integer between %d & %d", min, max);
         input = Integer.parseInt(scanner.nextLine());
-        if (input > min && input < max) {
+        if (input >= min && input <= max) {
             return input;
         } else {
             System.out.println("Out of range");

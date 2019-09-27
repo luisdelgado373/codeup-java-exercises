@@ -10,7 +10,7 @@ public class ArraysExercises {
         Person[] people = new Person[3];
         Person person1 = new Person("Luis");
         Person person2 = new Person("Louis");
-        Person person3 = new Person("Lewis");
+        Person person3 = new Person("Sal");
         Person person4 = new Person("Bob");
         Person person5 = new Person("Tom");
 
