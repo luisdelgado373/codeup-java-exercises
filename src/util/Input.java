@@ -22,13 +22,17 @@ public class Input {
 
     public int getInt(int min, int max) {
         int input;
-        boolean isTrue = false;
-
-        input = Integer.parseInt(scanner.nextLine());
-        if (input >= min && input <= max) {
-            return input;
-        } else {
-            System.out.println("Out of range");
+        System.out.printf("Enter an integer between %d & %d\n", min, max);
+        try {
+            input = Integer.parseInt(scanner.nextLine());
+            if (input >= min && input <= max) {
+                return input;
+            } else {
+                System.out.println("Out of range");
+                return getInt(min, max);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input");
             return getInt(min, max);
         }
     }
@@ -36,14 +40,19 @@ public class Input {
     public int getInt() {
         int input;
         System.out.println("Enter an integer");
-        input = Integer.parseInt(scanner.nextLine());
+        try {
+            input = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input");
+            return getInt();
+        }
         return input;
     }
 
     public double getDouble(double min, double max) {
         double input;
-
-        System.out.printf("give a double between %f & %f", min, max);
+        System.out.printf("give a double between %f & %f\n", min, max);
+        try {
             input = Double.parseDouble(scanner.nextLine());
             if (input > min && input < max) {
                 return input;
@@ -51,10 +60,21 @@ public class Input {
                 System.out.println("Out of range");
                 return getDouble(min, max);
             }
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input");
+            return getDouble(min, max);
+        }
     }
 
     public double getDouble(String prompt) {
+        double input;
         System.out.println(prompt);
-        return Double.parseDouble(scanner.nextLine());
+        try {
+            input = Double.parseDouble(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input");
+            return getDouble(prompt);
+        }
+        return input;
     }
 }
